@@ -1,0 +1,202 @@
+@import "variables";
+@import "mixins";
+@import "reset";
+
+body {
+    font-family: paralucent;
+    color: $color-primary;
+}
+
+h1 {
+    font-size: 7rem;
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+        color: whitesmoke;
+    }
+}
+
+.container {
+    padding: 0 3rem;
+
+    @media screen and (min-width: $xl-breakpoint) {
+        padding: 0 10rem;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.justify-content {
+    justify-content: space-between;
+}
+
+.btn {
+    display: block;
+    margin-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-custom {
+    background: transparent;
+    color: black;
+    border: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.input {
+    height: 3rem;
+    border: 1px solid white;
+}
+
+.btn-light {
+    @include button($color-primary, white, whitesmoke);
+}
+
+.btn-dark {
+    @include button(whitesmoke, $color-primary, $color-primary);
+}
+
+.movie-list {
+    display: flex;
+    margin: 2rem 0;
+
+    .movie-search {
+        padding: 0 1rem;
+
+        h3 {
+            a {
+                color: black;
+            }
+        }
+    }
+
+    img {
+        width: 40rem;
+    }
+}
+
+
+
+// EN TETE
+header {
+    padding: 5rem 0;
+
+    .nav-hamburger-icon {
+        margin-right: 5rem;
+    }
+
+    .brand {
+        color: $color-primary;
+        font-size: 3rem;
+        font-weight: 800;
+    }
+}
+
+// FILMS
+.movies {
+    justify-content: space-between;
+}
+
+.movie {
+    position: relative;
+    color: white;
+
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: $sm-breakpoint) {
+        flex-basis: 45%;
+    }
+
+    @media screen and (min-width: $md-breakpoint) {
+        flex-basis: 30%;
+    }
+
+    @media screen and (min-width: $xl-breakpoint) {
+        flex-basis: 18%;
+    }
+
+    .movie-details {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, $color-primary 100%);
+        padding: 3rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: 600;
+
+            margin: 0 0 0.5rem;
+        }
+
+        @at-root {
+            .movie-genre {
+                display: inline-block;
+                font-size: 14px;
+                opacity: 0.7;
+
+                // Ajouter une virgule entre chaque élément de la liste mais pas sur le dernier :)
+                &:not(:last-child)::after {
+                    content: ",";
+                }
+            }
+        }
+    }
+}
+
+// FICHE FILM
+.movie-wrapper {
+    border-top: 0.1rem solid whitesmoke;
+    padding-top: 5rem;
+    margin-bottom: 5rem;
+    align-items: flex-end;
+
+    .movie-left-wrapper {
+        @media screen and (min-width: $md-breakpoint) {
+            flex-basis: 30%;
+            margin-right: 5rem;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+    }
+
+    .movie-right-wrapper {
+        flex-grow: 1;
+        flex-basis: 60%;
+        padding-top: 5rem;
+        color: $color-primary;
+
+        .movie-year {
+            font-size: 2.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            line-height: 3rem;
+            margin: 5rem 0;
+        }
+    }
+}
