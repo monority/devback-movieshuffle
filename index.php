@@ -56,7 +56,3 @@ include("templates/header.php");
 include("templates/footer.php");
 ?>
 
-
-
-
-<!-- description, realDate, duration, video, highlighted -->

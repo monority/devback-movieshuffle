@@ -72,6 +72,11 @@ a {
 .movie-list {
     display: flex;
     margin: 2rem 0;
+    @media screen and (max-width: $md-breakpoint) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     .movie-search {
         padding: 0 1rem;
@@ -84,7 +89,23 @@ a {
     }
 
     img {
-        width: 40rem;
+        width: calc(30rem + 10vw)
+    }
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    a{
+        text-align: center;
+        color: black;
+        font-size: 5rem;
+        margin: 1rem;
+        width: 8rem;
+        background-color: rgb(243, 243, 243);
+        box-shadow: 0px 0px 5px 3px rgba(40, 40, 40, 0.5);
     }
 }
 

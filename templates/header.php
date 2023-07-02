@@ -45,7 +45,7 @@ if (!empty($_POST['search'])) {
             <div class="wrapper">
                 <form action="" method="post">
                     <label for="search-tool" id="search-tool"></label>
-                    <input type="text" id="search-tool" name="search" placeholder="Rechercher..." required class="input">
+                    <input type="text" id="search-tool" name="search" placeholder="Taper votre recherche..." required class="input">
                     <label for="search-submit"></label>
                     <input type="submit" name="search-submit" id="search-submit" value="Rechercher" class="btn-custom">
                 </form>
